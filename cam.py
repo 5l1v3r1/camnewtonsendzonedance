@@ -15,6 +15,7 @@ import re
 import socket
 import struct
 import random
+import time
 
 def random_mac():
     """Returns a random MAC address string in 00:00:00:00:00:00 format"""
@@ -107,10 +108,12 @@ def main():
 
     while True:
         send_arp_reply("eno1",
-                       "ff:ff:ff:ff:ff:ff",
+                       #"ff:ff:ff:ff:ff:ff",
+                       "ff:ff:aa:bb:cc:dd",
                        random_mac(),
                        "54.54.54.54",
                        "aa:aa:aa:aa:aa:aa")
+        #time.sleep(0.05)
 
 
 if __name__ == "__main__":
